@@ -97,7 +97,7 @@ export default class CalendarScroller extends Component {
       this.scrollToDate(selectedDate);
     }
 
-    if (this.props.data !== prevProps.data) {
+    if (!selectedDate.isSame(prevProps.renderDayParams.selectedDate)) {
       updateState = true;
       newState = {...newState, ...this.updateDaysData(this.props.data)};
     }
