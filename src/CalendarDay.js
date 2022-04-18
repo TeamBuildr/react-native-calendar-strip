@@ -250,7 +250,7 @@ class CalendarDay extends Component {
       if (markedDates.length === 0) {
         return {};
       }
-      return markedDates.find(md => moment(day).isSame(md.date, "day")) || {};
+      return markedDates.find(md => moment(day).format('YYYY-MM-DD') === moment(md.date).format('YYYY-MM-DD')) || {};
     } else if (markedDates instanceof Function) {
       return markedDates(day) || {};
     }
